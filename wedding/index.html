@@ -992,6 +992,108 @@
             60% { transform: scale(1); opacity: 0.9; }
         }
 
+        /* FAQ Section */
+        .faq {
+            background: var(--milk);
+        }
+
+        .faq-list {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(169, 139, 118, 0.2);
+        }
+
+        .faq-item:first-child {
+            border-top: 1px solid rgba(169, 139, 118, 0.2);
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 28px 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            text-align: left;
+            gap: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--burgundy);
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(169, 139, 118, 0.4);
+            border-radius: 50%;
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .faq-icon::before,
+        .faq-icon::after {
+            content: '';
+            position: absolute;
+            background: var(--burgundy);
+            border-radius: 1px;
+            top: 50%;
+            left: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .faq-icon::before {
+            width: 16px;
+            height: 1.5px;
+            transform: translate(-50%, -50%);
+        }
+
+        .faq-icon::after {
+            width: 1.5px;
+            height: 16px;
+            transform: translate(-50%, -50%);
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+            background: var(--burgundy);
+            border-color: var(--burgundy);
+        }
+
+        .faq-item.open .faq-icon::before,
+        .faq-item.open .faq-icon::after {
+            background: white;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+        }
+
+        .faq-answer p {
+            color: var(--warm-gray);
+            font-size: 0.97rem;
+            line-height: 2.1;
+            padding: 4px 4px 30px;
+            font-weight: 300;
+        }
+
         /* Responsive adjustments */
         @media (max-width: 900px) {
             :root {
@@ -1112,6 +1214,24 @@
             footer h3 {
                 font-size: 2rem;
             }
+
+            .faq-question {
+                font-size: 1.15rem;
+                padding: 22px 4px;
+            }
+
+            .faq-icon {
+                width: 34px;
+                height: 34px;
+            }
+
+            .faq-icon::before {
+                width: 13px;
+            }
+
+            .faq-icon::after {
+                height: 13px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1143,6 +1263,25 @@
                 width: 50px;
                 height: 50px;
             }
+
+            .faq-question {
+                font-size: 1.05rem;
+                padding: 18px 4px;
+                gap: 16px;
+            }
+
+            .faq-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            .faq-icon::before {
+                width: 12px;
+            }
+
+            .faq-icon::after {
+                height: 12px;
+            }
         }
     </style>
 </head>
@@ -1155,6 +1294,7 @@
             <li><a href="#details" class="nav-link">Детали</a></li>
             <li><a href="#dresscode" class="nav-link">Дресс-код</a></li>
             <li><a href="#rsvp" class="nav-link">Ответ</a></li>
+            <li><a href="#faq" class="nav-link">Вопросы</a></li>
         </ul>
     </nav>
 
@@ -1344,6 +1484,53 @@
 
                     <button type="submit" class="submit-btn">Отправить Ответ</button>
                 </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Ответы на вопросы</h2>
+            <p class="section-subtitle">Уточним все детали</p>
+            <div class="section-divider"></div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Возможно ли приехать на личном автомобиле?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, на территории загородного клуба имеется бесплатная парковка для гостей 🚜</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Нужно ли дарить цветы?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Просим вас не дарить цветы, так как вскоре после мероприятия мы улетаем в свадебное путешествие и не успеем насладиться вашими красивыми букетами 🩵</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Есть ли возможность остаться на ночь?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, на территории загородного клуба есть коттеджи, которые вы можете снять. Для уточнения подробностей можете написать Оле или Феде 🤠</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Кому задать вопрос по поводу мероприятия?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Если у вас есть идея, сюрприз или поздравление - напишите нашему ведущему 🤫<br> Григорий: +7 (960) 524-11-31</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1721,6 +1908,16 @@
             for (let [key, value] of formData.entries()) {
                 console.log(`${key}: ${value}`);
             }
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+                if (!isOpen) item.classList.add('open');
+            });
         });
     </script>
 
