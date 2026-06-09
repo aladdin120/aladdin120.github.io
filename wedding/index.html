@@ -126,14 +126,14 @@
 
         .story-photo-item img {
             width: 100%;
-            height: 400px;
+            height: auto;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);;
             object-fit: cover;
-            transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            filter: sepia(10%) contrast(95%) saturate(90%);
         }
-
+        
         .story-photo-item:hover img {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
 
         .story-photo-item::before {
@@ -155,19 +155,11 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 12px;
             }
-
-            .story-photo-item img {
-                height: 280px;
-            }
         }
 
         @media (max-width: 480px) {
             .story-photos-grid {
                 gap: 8px;
-            }
-
-            .story-photo-item img {
-                height: 220px;
             }
         }
 
@@ -1191,22 +1183,17 @@
     <!-- Story Section -->
     <section class="story" id="story">
         <div class="container">
-            <h2 class="section-title">Наша История</h2>
-            <p class="section-subtitle">Как всё начиналось</p>
+            <h2 class="section-title">С любовью приглашаем вас</h2>
+            <p class="section-subtitle">На самый важный день в нашей жизни</p>
             <div class="section-divider"></div>
             <div class="story-content">
-                <div class="story-photos-grid">
-                    <div class="story-photo-item">
-                        <img src="photos/story-photo.jpg" alt="Детское фото Фёдора">
-                    </div>
-                    <div class="story-photo-item">
-                        <img src="photos/story-photo.jpg" alt="Детское фото Ольги">
-                    </div>
+                <div class="story-photo-item">
+                    <img src="photos/photo.jpg">
                 </div>
                 <div class="story-text">
-                    <p>Дорогие друзья и родные! Мы счастливы пригласить вас на наше свадебное торжество, которое состоится в живописном месте на природе, среди полей и вековых деревьев.</p>
-                    <p>Наша история началась с случайной встречи, которая переросла в настоящую любовь. И теперь мы хотим разделить этот особенный день с самыми близкими людьми.</p>
-                    <p>Вас ждёт уютная атмосфера, вкусная еда, музыка и танцы под звёздным небом. Давайте вместе создадим воспоминания, которые останутся в наших сердцах навсегда!</p>
+                    <p>Дорогие родные и друзья! Мы счастливы пригласить вас на наше свадебное торжество, которое состоится в живописном месте на природе, среди полей и вековых деревьев.</p>
+                    <p>Наша история началась ещё в школе. Уже много лет мы идём по жизни вместе, и наша любовь становится только крепче. И теперь мы хотим разделить этот особенный день с самыми близкими людьми.</p>
+                    <p>Вас ждёт уютная атмосфера, музыка и танцы под звёздным небом. Мы с нетерпением ждём возможности разделить этот особенный день вместе с вами!</p>
                     <div class="signature">Фёдор и Ольга</div>
                 </div>
             </div>
@@ -1221,18 +1208,18 @@
             <div class="section-divider"></div>
             <div class="details-grid">
                 <div class="detail-card">
-                    <span class="detail-icon">📍</span>
+                    <span class="detail-icon">🌾</span>
                     <h3>Место</h3>
                     <p>Загородный клуб "Pine River"<br>
                     Калужская область, с. Восход</p>
                 </div>
                 <div class="detail-card">
-                    <span class="detail-icon">📅</span>
+                    <span class="detail-icon">🗓️</span>
                     <h3>Дата</h3>
                     <p>11 Августа 2026</p>
                 </div>
                 <div class="detail-card">
-                    <span class="detail-icon">🕐</span>
+                    <span class="detail-icon">🕰️</span>
                     <h3>Время</h3>
                     <p>Сбор гостей: 15:00<br>
                     Церемония: 16:00</p>
@@ -1252,12 +1239,16 @@
                 Выбирайте лёгкие ткани, пастельные оттенки и удобную обувь для танцев на природе.
             </p>
             <div class="dress-code-palette">
-                <div class="color-swatch" style="background: #A56B7B;"></div>
-                <div class="color-swatch" style="background: #8A9A8B;"></div>
-                <div class="color-swatch" style="background: #B8A99A;"></div>
-                <div class="color-swatch" style="background: #C4B59A;"></div>
-                <div class="color-swatch" style="background: #D4C4B8;"></div>
-                <div class="color-swatch" style="background: #A89F97;"></div>
+                <div class="color-swatch" style="background: #CFECF3;"></div>
+                <div class="color-swatch" style="background: #AACDDC;"></div>
+                <div class="color-swatch" style="background: #7895B2;"></div>
+                <div class="color-swatch" style="background: #B7B89F;"></div>
+                <div class="color-swatch" style="background: #8E977D;"></div>
+                <div class="color-swatch" style="background: #777C6D;"></div>
+                <div class="color-swatch" style="background: #F3E4C9;"></div>
+                <div class="color-swatch" style="background: #BFA28C;"></div>
+                <div class="color-swatch" style="background: #A98B76;"></div>
+                <div class="color-swatch" style="background: #000000;"></div>
             </div>
         </div>
     </section>
@@ -1267,7 +1258,6 @@
     <section class="rsvp" id="rsvp">
         <div class="container">
             <h2 class="section-title">Подтвердите Присутствие</h2>
-            <p class="section-subtitle">Ответ</p>
             <div class="section-divider"></div>
             <div class="rsvp-container">
                 <form class="rsvp-form" id="rsvpForm" action="https://formspree.io/f/xgonbegr" method="POST">
@@ -1386,6 +1376,7 @@
 
         // Start playing when video metadata is loaded
         heroVideo.addEventListener('loadedmetadata', function() {
+            heroVideo.playbackRate = 0.85;
             playInterval(0);
         });
 
